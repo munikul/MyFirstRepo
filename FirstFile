@@ -1,0 +1,20 @@
+FOR i:=0 to 2 By 1 Do
+
+	TestDty ACCESS rGantyrPaP.Cfg.pGrippers[i];
+		if Grip then
+			if rGripper.Command.isEmpty then
+				rGripper.Command.Grip:=True;
+			else
+				rGripper.Command.Grip:=False;
+			end_if;
+		end_if;
+		
+		IF Release then
+			if rGripper.Command.HasPart then
+				rGripper.Command.Release:=True;
+			else
+				rGripper.Command.Release:=False;
+			end_if;
+		end_if;
+		
+END_FOR;
